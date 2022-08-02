@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogDeCafé</title>
+    <meta name="descripcion" content="Página web de blog de café">
+    <link rel="preload" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="prefetch" href="nosotros.html">
+</head>
+<body>                                                                                                      <!--/* Cuerpo completo de nuestra pagina-->
+
+    <header class="header">                <!--||Encabezado De La Pagina||-->                               <!--/* Encabezado de la pagina-->
+
+        <div class="contenedor">                                                                            <!--/* Bloque o Divisor(div)-->
+            <div class="barra">                                                                             <!--/* "Class" Para dar nombre y utilizar en el CSS-->
+                <a class="logo no-margin centrar-texto" href="index.html">                                  <!--/* Enlaces(a), "href": ....(pagina web deseada)-->
+                    <h1 class="logo__nombre">Blog<span class="logo__bold">DeCafé</span></h1>                <!--/* Titulo o Lo mas Importante(h1), "span" es para modificar una letra o varias-->
+                </a>
+                <nav class="navegacion">                                                                    <!--/* Otro tipo de Bloque (nav), ideal para poner varios enlaces-->
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="header__texto">
+            <h2 class="no-margin">Blog de café con consejos y cursos</h2>                                   <!--/* Subtitulo o Lo segundo mas Importante(h2)-->
+            <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>             <!--/* Parrafo(p)-->
+        </div>
+    </header>
+
+    <div class="contenedor contenido-principal">    <!--||Blog Central||-->
+        <main class="blog">                                                                                 <!--/* Otro tipo de Bloque(main), funciona como un subcuerpo dentro del body-->
+            <h3>Nuestro Blog</h3>                                                                           <!--/* Otro Subtitulo pero menos importante-->
+
+            <article class="entrada">                                                                       <!--/* Otro tipo de Bloque(article), ideal para entradas a foros o noticias-->
+                <div>
+                    <picture>                                                                               <!--/* Te permite agregar nuevos formatos de imagenes-->
+                        <source src="img/blog1.webp" alt="img/webp" loading="lazy">                         <!--/* La Extencion ".webp" facilita la descarga de la imagen ya que generalmente pesa la mitad que una ".jpg". (Loading=lazy) esto permite descargar la imagen recien cuando pasas su bloque aligerando el tiempo de carga de la pantalla-->
+                        <img src="img/blog1.jpg" alt="imagen blog" loading="lazy">                          <!--/* Para colocar Imagenes(img), src="el lugar donde se encuentra la iamgen", alt= "un nombre (importante)" -->
+                    </picture>
+                </div>
+
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">Tipos de Granos de Café</h4>                                      <!--/* Otro Subtitulo pero MENOS importante-->
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit.                              
+                    Nam accumsan nibh sit amet est gravida tristique. 
+                    Sed dolor nunc, porttitor et nisl quis, dignissim faucibus justo.
+                    mattis augue, non vulputate sapien metus vitae justo. Nam eu hendrerit nunc.
+                    Praesent quis luctus mi, ac interdum lectus. Integer finibus, quam sed eleifend</p>
+                    <a class="boton boton--primario" href="entrada.html">Leer Entrada</a>
+                </div>
+            </article>
+
+            <article class="entrada">                                                                       
+                <div>
+                    <picture>
+                        <source src="img/blog2.webp" alt="img/webp" loading="lazy">
+                        <img src="img/blog2.jpg" alt="imagen blog" loading="lazy"> 
+                    </picture>                
+                </div>
+
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">3 Deliciosas recetas para el café</h4>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit.                              
+                    Nam accumsan nibh sit amet est gravida tristique. 
+                    Sed dolor nunc, porttitor et nisl quis, dignissim faucibus justo.
+                    mattis augue, non vulputate sapien metus vitae justo. Nam eu hendrerit nunc.
+                    Praesent quis luctus mi, ac interdum lectus. Integer finibus, quam sed eleifend</p>
+                    <a class="boton boton--primario" href="entrada.html">Leer Entrada</a>
+                </div>
+            </article>
+
+            <article class="entrada">                                                                       
+                <div>
+                    <picture>
+                        <source src="img/blog3.webp" alt="img/webp" loading="lazy">
+                        <img src="img/blog3.jpg" alt="imagen blog" loading="lazy"> 
+                    </picture>                                            
+                </div>
+
+                <div class="entrada__contenido">
+                    <h4 class="no-margin">Beneficios del café</h4>
+                    <p>orem ipsum dolor sit amet, consectetur adipiscing elit.                              
+                    Nam accumsan nibh sit amet est gravida tristique. 
+                    Sed dolor nunc, porttitor et nisl quis, dignissim faucibus justo.
+                    mattis augue, non vulputate sapien metus vitae justo. Nam eu hendrerit nunc.
+                    Praesent quis luctus mi, ac interdum lectus. Integer finibus, quam sed eleifend</p>
+                    <a class="boton boton--primario" href="entrada.html">Leer Entrada</a>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">               <!--||Barra Derecha Del Blog||-->                               <!--/* Para poner barra mas pequeñas a los costados de nuestro paginas(aside)-->
+            <h3>Nuestros Cursos y Talleres</h3>
+
+            <ul class="cursos no-padding">                                                                    <!--/* Lista no ordenada con puntos (ul) o lista ordenada (ol) con numeros-->    
+                <li class="widget-curso">                                                                     <!--/* Otro tipo de Bloque (li) ideal para usar con (ul/ol)-->
+                    <h4 class="no-margin">Técnicas De Extracción de café</h4>
+                    <p class="widget-curso__label">Precio:
+                        <span class="widget-curso__info">Gratis</span>
+                    </p>
+                    <p class="widget-curso__label">Cupo:
+                        <span class="widget-curso__info">20</span>
+                    </p>
+                    <a class="boton boton--secundario" href="entrada.html">Más Información
+                                                                        sobre nuestros cursos</a>
+                </li>
+
+                <li class="widget-curso">
+                    <h4 class="no-margin">4 Recetas De Café Para Principiantes</h4>
+                    <p class="widget-curso__label">Precio:
+                        <span class="widget-curso__info">Gratis</span>
+                    </p>
+                    <p class="widget-curso__label">Cupo:
+                        <span class="widget-curso__info">20</span>
+                    </p>
+                    <a class="boton boton--secundario" href="entrada.html">Más Información
+                                                                        sobre nuestros cursos</a>
+                </li>
+
+
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="footer">                         <!--||Pies de la Pagina||-->                               <!--/* Pies de la Pagina-->
+        <div class="contenedor">                                                                               <!--/* Bloque o Divisor(div)-->
+            <div class="barra">
+                <a class="logo no-margin centrar-texto" href="index.html">                                     <!--/* Enlaces(a), href: "pagina web deseada"-->
+                    <h1 class="logo__nombre">Blog<span class="logo__bold">DeCafé</span></h1>                   <!--/* Titulo o Lo mas Importante(h1), el "span" es para modificar una letra o varias-->
+                </a>
+                <nav class="navegacion">                                                                       <!--/* Otro tipo de Bloque (nav)-->
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="cursos.html" class="navegacion__enlace">Cursos</a>
+                    <a href="contacto.html" class="navegacion__enlace">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/modernizr.js"></script>
+</body>
+</html>

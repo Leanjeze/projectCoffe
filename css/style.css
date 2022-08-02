@@ -1,0 +1,246 @@
+:root {         /* COMPONENTES QUE VAMOS A UTILIZAR */     
+    /* Fuentes de las letras */
+   --fuenteheading: 'PT Sans', sans-serif;
+   --fuenteparrafos: 'Open Sans', sans-serif;
+
+   /* Colores */
+   --primario: #784D3C;
+   --blanco: #FFFFFF;
+   --negro: #000000;
+   --gris: #757575;
+}
+html {        /* INICIO DEL SITIO WEB */
+    box-sizing: border-box;                           /* Importante poner todos estas lineas para que funcione */
+    font-size: 62.5%;                                 /* Hack para que 10px = 1rem */
+}                                                     /**/
+*, *:before, *:after {                                /**/
+  box-sizing: inherit;                                /**/
+}
+body {
+  font-family: var(--fuenteparrafos);                 /* Fuente de la letra */
+  font-size: 1.6rem;                                  /* Tamaño de la letra */
+  line-height: 2;                                     /* Espacio entre lineas, solo usarlo con numero (no tiene elemento de medicion)*/
+}
+/* Globales */
+.contenedor {
+  max-width: 120rem;                                  /* Limitacion en la resolucion de pantalla ( 120rem = 1200px )*/
+  width: 90%;                                         /* Siempre usarlo en porcentaje (%) para que las lineas no quedan pegadas a los extremos de la pantalla */
+  margin: 0 auto;                                     /* Para acomodar su ubicacion luego de aplicar el max-width, primera cordenada (arriba/abajo), segunda cordenada (derecha/izquierda) "Siempre sentido horario(si queres usar cuatro cordenadas)" */
+}
+a {
+  text-decoration: none;                              /*Para que el ELEMENTO que contengan la pagina web no tengan el subrayado*/
+}
+h1, h2, h3, h4 {
+  font-family: var(--fuenteheading);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+img {
+  max-width: 100%;                                   /* En las imagenes siempre se les implementa el % ya que esto ayuda a que la img se reduzca cuando la ventana de la pagina web se achique*/
+}
+/* Utilidades */
+.no-margin {
+  margin: 0;                                         /* Elimina los margenes que el navegador le implementa automaticamente (DE ARRIBA Y DE ABAJO) */
+}
+.no-padding {                                        /* Elimina el padding que el navegador le implementa automaticamente (DE IZQUIERDA Y DERECHA) */
+  padding: 0;
+}
+.centrar-texto {
+  text-align: center;                                /* Sirve para centrar el texto */
+}
+/* Header */
+.webp .header {                                      /* webp De esta forma se puede implementar en el CSS */
+  background-image: url(../img/banner.webp);         /**/
+}                                                    /**/
+.no-webp .header {                                   /* Todas esta lineas tienen que escribirse por si no tiene soporte en alguna pagina */
+  background-image: url(../img/banner.jpg);          /**/
+}
+.header {
+  background-image: url(../img/banner.jpg);         /* Para colocar imagenes de FONDO (**IMPORTANTE**) */
+  height: 60rem;                                    /* Para definir una altura y aparezca la imagen colocada desde CSS */
+  background-size: cover;                           /* Para que el FONDO tome todo el espacio disponible */
+  background-repeat: no-repeat;                     /* Para que el FONDO no se repita cuando su tamaño termine de cubrir una zona */
+  background-position: center center;               /* Para cuando la pestaña se haga mas pequeña el FONDO se centre automaticamente, y siempre poner doble cordenada*/
+}
+.header__texto {
+  text-align: center;
+  margin-top: 5rem;                                 /* Para solamente tocar el margen de arriba */
+  color: var(--blanco);                             /* Implemente el color deseado */
+}
+@media (min-width: 768px) {
+    .header__texto {
+      margin-top: 12rem;
+    }
+}
+.barra {
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {                        /* Sirve para acomodar los elementos en dispositivos de resolucion mas pequeña */
+  .barra {
+    display: flex;                                 /* Una forma de mover elementos a la posicion deseada (flex/grid) */
+    justify-content: space-between;                /* Para alinear horizontalmente. "space-between" Dentro del Flex Se la utiliza para colocar los elementos en las puntas opuestas */
+    align-items: center;                           /* Para alinear verticalmente */
+  }
+}
+.logo {
+  color: var(--blanco);
+}
+.logo__nombre {
+  font-weight: 400;                                /* Para variar el tamaño de su fuente adquirida (400/700) no necesita ir acompañado de ningun elemento de medicion */
+}
+.logo__bold {
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .navegacion {
+    display: flex;
+    gap: 2rem;                                     /* Una forma dar espacio entre los bloques de los distintos elementos, No tiene mucho soporte(**IMPORTANTE**)*/
+  }
+    
+}
+.navegacion__enlace {
+  display: block;                                  /* Para que los elementos esten uno debajo del otro*/
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--blanco);
+}
+.navegacion__enlace:hover {                        /* ":hover" Para implementar efectos sobre un elemento con caracteristicas ya definidas */
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .contenido-principal {
+    display: grid;                                 /*  */
+    grid-template-columns: 2fr 1fr;                /*  */
+    column-gap: 4rem;                              /*  */
+  }
+}
+.entrada {
+  border-bottom: 1px solid var(--gris);            /* Para colocar bordes que se vean, "botton"= abajo. CORDENADAS: primero(ANCHO)segundo(TIPO)tercero(COLOR)*/
+  margin-bottom: 2rem;                             /* Para solomente tocar el margen de abajo */
+}
+.entrada:last-of-type {                            /* ":last-of-type"(Seudoselector) Se utiliza para quitar caracteristicas implementadas SOLAMENTE al ultimo elemento del bloque */
+  border: none;                                    /* "none" Para quitar bordes */
+  margin-bottom: 0;
+}
+.boton {
+  display: block;                                  /* "block" Se utiliza para que tome todo el espacio disponible */
+  font-family: var(--fuenteheading);
+  color: var(--blanco);
+  text-align: center;
+  text-transform: uppercase;                      /* Para transformar el texto todo en mayuscula */
+  padding: 1rem 3rem;                              /* A veces funciona como un margin(**IMPORTANTE**) */
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  border: none;
+}
+.boton:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .boton {
+    display: inline-block;                         /* "inline" son inmunes a los margenes o width || "inline-block" podes colocar margenes y width */
+  }    
+}
+.boton--primario {
+  background-color: var(--negro);                   
+}
+.boton--secundario {
+  background-color: var(--primario);
+}
+.cursos {
+  list-style: none;                                /* Le quita el punto inicial para dejar de ser una lista */
+}
+.widget-curso{
+  border-bottom: 1px solid var(--gris);
+  margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {                                 
+  border: none;
+  margin-bottom: 0;
+}
+.widget-curso__label{
+  font-family: var(--fuenteheading);
+  font-weight: bold;                                /* "bold" = 700 */
+}
+.widget-curso__info {
+  font-weight: normal;                              /* "normal" = 400 */
+}
+.widget-curso__label,
+.widget-curso__info {
+  font-size: 2rem;
+}
+/* Footer */
+.footer {
+  background-color: var(--negro);
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  .cuadro-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }   
+}
+/* Nosotros */
+.imagen-nosotros {
+  max-width: 100%;
+}
+/* Curso */
+@media (min-width: 768px) {
+  .cuadro-cursos {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2rem;
+    border-bottom: 1px solid #bbb8b8;
+    padding: 4rem 0;
+  }
+}
+.cuadro-cursos:last-of-type {
+  border: none;
+  margin-bottom: 0;
+}
+/* Contacto */
+.contacto-bg {
+  background-image: url(../img/contacto.jpg);
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Formulario */
+.formulario {
+  background-color: var(--blanco);
+  margin: -5rem auto 0 auto;
+  width: 95%;
+  padding: 5rem;
+}
+.campo {
+  display: flex;
+  margin-bottom: 2rem;
+
+}
+.campo__label {
+  flex: 0 0 9rem;
+  text-align: right;
+  padding-right: 2rem;
+}
+.campo__field {
+  flex: 1;
+  border: 1x solid #757575;
+}
+.campo__field--textarea {
+  height: 20rem;
+}
